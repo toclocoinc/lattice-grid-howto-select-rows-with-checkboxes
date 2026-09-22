@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How to select rows with checkboxes and read the selection</title>
+    <meta
+      name="description"
+      content="Twelve support tickets sit in a grid with a checkbox column and a select-all box in its heading. Tick a few rows and a live readout says how many are selected; click Archive selected and those rows are gone. Built with Lattice Grid loaded by script tag, no install and no build."
+    />
+    <link rel="icon" href="data:," />
+    <!--
+      The grid's stylesheet, from jsDelivr. The address names the exact
+      release, 1.68.2, and carries the hash of the file it expects, so the
+      page can never quietly pick up a different build than the one it was
+      checked against.
+    -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@toclocoinc/lattice-grid@1.68.2/lattice-grid.min.css"
+      integrity="sha384-mcpd7S8C5nz58bZDAXdYH6rzezEhfN7B4u2SlW426dSe20GnkxTu4TygyOILnCth"
+      crossorigin="anonymous"
+    />
+    <style>
+      body { margin: 0; font-family: system-ui, sans-serif; background: #f4f6f9; color: #131a24; }
+      header { padding: 1.5rem 1.5rem 0.5rem; max-width: 960px; margin: 0 auto; }
+      header p { color: #4a5568; }
+      header a { color: #2d6bff; }
+      main { max-width: 960px; margin: 0 auto; padding: 0 1.5rem 2.5rem; }
+      #toolbar { margin: 0 0 0.75rem; display: flex; align-items: center; gap: 1rem; }
+      #archive { font: inherit; padding: 0.4rem 0.75rem; border: 1px solid #ccd3dc; border-radius: 4px; background: #fff; cursor: pointer; }
+      #grid { height: 420px; }
+      #stat { font-size: 0.9rem; color: #4a5568; margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>How to select rows with checkboxes and read the selection</h1>
+      <p>
+        Twelve support tickets sit in the grid below with a checkbox column and a select-all box
+        in its heading. Tick a row, or several, and the readout below the grid updates from the
+        grid's own selection. Click Archive selected and the ticked rows are removed. Read the
+        <a href="https://www.latticegrid.dev/docs/how-to/select-rows-with-checkboxes/">full how-to</a>
+        on latticegrid.dev.
+      </p>
+    </header>
+    <main>
+      <div id="toolbar">
+        <button id="archive" type="button">Archive selected</button>
+        <p id="stat"></p>
+      </div>
+      <div id="grid"></div>
+    </main>
+
+    <!--
+      The library, as a classic script tag. No npm install, no bundler, no
+      type="module": the file runs as it arrives and leaves the LatticeGrid
+      global behind.
+    -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@toclocoinc/lattice-grid@1.68.2/lattice-grid.min.js"
+      integrity="sha384-vCzLyFYn0T0lz/vkdH4x0JpJZkOazZgI2LiGui7lm5uerdZd0Z46G9hr3Aq1FFPS"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./demo.js"></script>
+  </body>
+</html>
